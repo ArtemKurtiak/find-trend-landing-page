@@ -1,6 +1,6 @@
 
 html {
-    font-size: calc(16px + 0.4vw);
+    font-size: calc(10px + 1.5vmin);
 }
 
 @font-face {
@@ -10,5 +10,15 @@ html {
 
 @font-face {
     font-family: 'Effra-Regular';
-    src: local('Effra-Regulat'), url('./assets/fonts/Effra-Regular.ttf');
+    src: local('Effra-Regular'), url('./assets/fonts/Effra-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Effra-Heavy';
+    src: local('Effra-Heavy'), url('./assets/fonts/Effra-Heavy.ttf');
+}
+
+@font-face {
+    font-family: 'GoodDog-New';
+    src: local('GoodDog-New'), url('./assets/fonts/GoodDog-New.ttf');
 }

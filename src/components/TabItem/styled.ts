@@ -10,17 +10,24 @@ export const TabItemWrapper = styled.div`
   display: flex;
   gap: 13px;
   align-items: center;
-  justify-content: center;
+  padding-left: 40px;
   background-color: ${ColorsEnum.DARK_GREY};
   position: relative;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  
+  @media (max-width: 330px) {
+    width: 250px;
+  }
 `
 
 export const TabItemLabel = styled.div`
-  font-size: 20px;
+  display: inline-block;
+  font-size: 19px;
   font-family: ${FontFamiliesEnum.EFFRA_REGULAR}, sans-serif;
   color: ${ColorsEnum.WHITE};
   max-width: 213px;
   overflow: hidden;
+  word-break: keep-all;
 `
 
 export const CloseTabItemWrapper = styled.div`
@@ -28,7 +35,7 @@ export const CloseTabItemWrapper = styled.div`
   right: 0;
   display: flex;
   height: 100%;
-  width: 85px;
+  width: 60px;
   align-items: center;
   justify-content: flex-end;
   padding-right: 23px;

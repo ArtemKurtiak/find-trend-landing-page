@@ -13,6 +13,8 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   
   ${MediaQueriesEnum.MAX_MOBILE} {
     padding: 2.5vh 2vh;
+    height: fit-content;
+    min-height: 100vh;
   } 
   
   ${MediaQueriesEnum.TABLET} {

@@ -6,11 +6,23 @@ import FirstPageBackground from '../../assets/images/png/home_background.png';
 import Hint from "../../components/Hint";
 import Button from "../../components/Button";
 import { Flex } from "../../components/Common/styled";
-import { HomePageFirstMainPart, HomePageSubTitle, HomePageTitle } from "./styled";
+import {
+    DribbleTab,
+    FacebookTab,
+    HomePageFirstMainPart,
+    HomePageSubTitle,
+    HomePageTitle,
+    PinterestTab,
+    TabsWrapper,
+    TwitterTab
+} from "./styled";
 import { ColorsEnum } from "../../enums/colors.enum";
 import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
 
 import Twitter from '../../assets/images/svg/twitter.svg';
+import Pinterest from '../../assets/images/svg/pinterest.svg';
+import Facebook from '../../assets/images/svg/facebook.svg';
+import Dribble from '../../assets/images/svg/dribble.svg';
 import TabItem from "../../components/TabItem";
 
 const Home = () => {
@@ -50,10 +62,32 @@ const Home = () => {
                         forMobile={false}
                     />
                 </Flex>
-                <TabItem
-                    label={'Cryptopunk - Search'}
-                    icon={Twitter}
-                />
+                <TabsWrapper>
+                    <TwitterTab>
+                        <TabItem
+                            label={'Cryptopunk - Search'}
+                            icon={Twitter}
+                        />
+                    </TwitterTab>
+                    <PinterestTab>
+                        <TabItem
+                            label={'Popular Design - Search'}
+                            icon={Pinterest}
+                        />
+                    </PinterestTab>
+                    <FacebookTab>
+                        <TabItem
+                            label={'Product Design - Search'}
+                            icon={Facebook}
+                        />
+                    </FacebookTab>
+                    <DribbleTab>
+                        <TabItem
+                            label={'Elon Musk - Search'}
+                            icon={Dribble}
+                        />
+                    </DribbleTab>
+                </TabsWrapper>
             </HomePageFirstMainPart>
         </PageContent>
     </>

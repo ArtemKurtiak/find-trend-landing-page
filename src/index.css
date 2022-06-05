@@ -1,6 +1,7 @@
 
 html {
     font-size: calc(10px + 1.5vmin);
+    overflow-x: hidden;
 }
 
 @font-face {

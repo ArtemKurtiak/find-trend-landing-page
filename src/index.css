@@ -2,6 +2,12 @@
 html {
     font-size: calc(10px + 1.5vmin);
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 @font-face {

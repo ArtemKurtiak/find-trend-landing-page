@@ -3,10 +3,9 @@ import React from "react";
 import { PageContentWrapper } from "./styled";
 import { PageContentProps } from "./types";
 
-const PageContent: React.FC<PageContentProps> = ({ children, backgroundImage, backgroundColor }) => {
+const PageContent: React.FC<PageContentProps> = ({ children, ...props }) => {
     return <PageContentWrapper
-        backgroundImage={backgroundImage}
-        backgroundColor={backgroundColor}
+        {...props}
     >
         {children}
     </PageContentWrapper>

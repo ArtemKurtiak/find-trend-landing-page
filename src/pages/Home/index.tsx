@@ -5,25 +5,28 @@ import FirstPageBackground from '../../assets/images/png/home_background.png';
 
 import Hint from "../../components/Hint";
 import Button from "../../components/Button";
-import { Flex } from "../../components/Common/styled";
+import {Flex} from "../../components/Common/styled";
 import {
     DribbleTab,
     FacebookTab,
     HomePageFirstMainPart,
     HomePageSubTitle,
-    HomePageTitle,
+    HomePageTitle, OpenNewTabsDescription,
+    OpenNewTabsTabWrapper,
+    OpenNewTabsTitle,
     PinterestTab,
     TabsWrapper,
     TwitterTab
 } from "./styled";
-import { ColorsEnum } from "../../enums/colors.enum";
-import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
+import TabItem from "../../components/TabItem";
+import {ColorsEnum} from "../../enums/colors.enum";
+import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
 
 import Twitter from '../../assets/images/svg/twitter.svg';
 import Pinterest from '../../assets/images/svg/pinterest.svg';
 import Facebook from '../../assets/images/svg/facebook.svg';
 import Dribble from '../../assets/images/svg/dribble.svg';
-import TabItem from "../../components/TabItem";
+import Logo from '../../assets/images/svg/logo.svg';
 
 const Home = () => {
     return <>
@@ -89,6 +92,43 @@ const Home = () => {
                     </DribbleTab>
                 </TabsWrapper>
             </HomePageFirstMainPart>
+        </PageContent>
+        <PageContent
+            backgroundColor={ColorsEnum.GREEN}
+            maxHeight={'80vh'}
+            display={'flex'}
+            gap={'60px'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            justifyContent={'center'}
+        >
+            <OpenNewTabsTitle>
+                Open new tabs is sh*t
+            </OpenNewTabsTitle>
+            <Flex
+                gap={'24px'}
+                alignItems={'center'}
+            >
+                <Hint
+                    color={ColorsEnum.BLACK}
+                    arrowPosition={'left'}
+                    label={'Solution for discover a trend'}
+                />
+                <OpenNewTabsTabWrapper>
+                    <TabItem
+                        label={'Findtrend - Elon Musk'}
+                        icon={Logo}
+                    />
+                </OpenNewTabsTabWrapper>
+                <Hint
+                    color={ColorsEnum.BLACK}
+                    arrowPosition={'right'}
+                    label={'You just need one tab now'}
+                />
+            </Flex>
+            <OpenNewTabsDescription>
+                A solution for your browser tabs and don’t make your device get slower over time. Get ease and faster to discover a trend with just one tab.
+            </OpenNewTabsDescription>
         </PageContent>
     </>
 }

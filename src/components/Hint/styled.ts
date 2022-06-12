@@ -3,10 +3,10 @@ import {HintItemLabelPropsType, HintPropsType} from "./types";
 import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
 import {MediaQueriesEnum} from "../../enums/mediaQueries.enum";
 
-export const HintItem = styled.div<Pick<HintPropsType, 'forMobile'>>`
+export const HintItem = styled.div<Pick<HintPropsType, 'forMobile'> & { alignItems: string; }>`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: ${props => props.alignItems};
   ${props => !props.forMobile && `
     ${MediaQueriesEnum.MAX_MOBILE} {
         display: none;

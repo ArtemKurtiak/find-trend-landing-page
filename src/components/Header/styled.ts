@@ -7,6 +7,10 @@ import { MediaQueriesEnum } from "../../enums/mediaQueries.enum";
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    margin-bottom: 100px;
+  }
 `
 
 export const HeaderLogoWrapper = styled.div`

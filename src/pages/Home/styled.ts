@@ -51,9 +51,14 @@ export const TabsWrapper = styled.div`
   padding-left: 100px;
   padding-bottom: 20px;
 
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  ${MediaQueriesEnum.MOBILE} {
     flex-direction: column;
+    align-items: center;
     padding-left: 0;
+  }
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    flex-direction: row;
+    padding-left: 100px;
   }
 `;
 
@@ -62,8 +67,11 @@ export const TwitterTab = styled.div`
   z-index: 5;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  ${MediaQueriesEnum.MOBILE} {
     transform: rotate(-4deg);
+  }
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    transform: rotate(-4deg) translateX(50px);
   }
 `
 
@@ -72,8 +80,11 @@ export const PinterestTab = styled.div`
   z-index: 4;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  ${MediaQueriesEnum.MOBILE} {
     transform: rotate(2deg);
+  }
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    transform: rotate(2deg) translateX(-40px) translateY(40px);
   }
 `
 
@@ -82,8 +93,11 @@ export const FacebookTab = styled.div`
   z-index: 3;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  ${MediaQueriesEnum.MOBILE} {
     transform: rotate(-4deg);
+  }
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    transform: rotate(-4deg) translateX(-110px) translateY(-25px);
   }
 `;
 
@@ -92,7 +106,43 @@ export const DribbleTab = styled.div`
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  ${MediaQueriesEnum.MOBILE} {
     transform: rotate(2deg);
+  }
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    transform: rotate(2deg) translateX(-190px) translateY(40px);
+  }
+`
+
+export const OpenNewTabsTitle = styled.div`
+  font-family: ${FontFamiliesEnum.EFFRA_HEAVY}, sans-serif;
+  color: ${ColorsEnum.BLACK};
+  text-align: center;
+  font-size: 72px;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    font-size: 36px;
+  }
+`;
+
+export const OpenNewTabsTabWrapper = styled.div`
+  padding: 60px 80px;
+  background-color: ${ColorsEnum.WHITE};
+  border-radius: 16px;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    padding: 24px;
+  }
+`;
+
+export const OpenNewTabsDescription = styled.div`
+  font-size: 20px;
+  text-align: center;
+  font-family: ${FontFamiliesEnum.EFFRA_REGULAR}, sans-serif;
+  color: ${ColorsEnum.BLACK};
+  max-width: 660px;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    max-width: 280px;
   }
 `

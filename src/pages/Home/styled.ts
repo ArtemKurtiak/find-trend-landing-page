@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
 import {ColorsEnum} from "../../enums/colors.enum";
 import {MediaQueriesEnum} from "../../enums/mediaQueries.enum";
+import {StartupsTitleProps} from "./types";
 
 export const HomePageFirstMainPart = styled.div`
   display: flex;
@@ -131,7 +132,8 @@ export const OpenNewTabsTabWrapper = styled.div`
   border-radius: 16px;
   
   ${MediaQueriesEnum.MAX_MOBILE} {
-    padding: 24px;
+    padding: 7px;
+    border-radius: 5px;
   }
 `;
 
@@ -145,4 +147,29 @@ export const OpenNewTabsDescription = styled.div`
   ${MediaQueriesEnum.MAX_MOBILE} {
     max-width: 280px;
   }
-`
+`;
+
+export const StartupsTitle = styled.div<StartupsTitleProps>`
+  display: inline;
+  font-family: ${FontFamiliesEnum.EFFRA_HEAVY}, sans-serif;
+  font-size: 64px;
+  color: ${props => props.color};
+  max-width: 75vw;
+  margin: ${props => props.margin};
+  text-align: ${props => props.align};
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    font-size: 35px;
+  }
+`;
+
+export const StartupsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.9vh 8vh;
+  
+  ${MediaQueriesEnum.MAX_TABLET} {
+    padding: 4vh 0 4vh 0;
+  }
+`;

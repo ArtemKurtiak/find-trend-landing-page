@@ -11,10 +11,13 @@ import {
     FacebookTab,
     HomePageFirstMainPart,
     HomePageSubTitle,
-    HomePageTitle, OpenNewTabsDescription,
+    HomePageTitle,
+    OpenNewTabsDescription,
     OpenNewTabsTabWrapper,
     OpenNewTabsTitle,
     PinterestTab,
+    StartupsTitle,
+    StartupsWrapper,
     TabsWrapper,
     TwitterTab
 } from "./styled";
@@ -27,6 +30,7 @@ import Pinterest from '../../assets/images/svg/pinterest.svg';
 import Facebook from '../../assets/images/svg/facebook.svg';
 import Dribble from '../../assets/images/svg/dribble.svg';
 import Logo from '../../assets/images/svg/logo.svg';
+import StartupsList from "../../components/StartupsList";
 
 const Home = () => {
     return <>
@@ -51,7 +55,14 @@ const Home = () => {
                     margin={'30px 0 0 0'}
                     gap={'18px'}
                     alignItems={'center'}
+                    mobileMargin
                 >
+                    <Hint
+                        color={ColorsEnum.WHITE}
+                        label={'Just click, and start your journey'}
+                        arrowPosition={'left'}
+                        forMobile={false}
+                    />
                     <Button
                         fontFamily={FontFamiliesEnum.EFFRA_HEAVY}
                         label={'Get Started'}
@@ -129,6 +140,34 @@ const Home = () => {
             <OpenNewTabsDescription>
                 A solution for your browser tabs and don’t make your device get slower over time. Get ease and faster to discover a trend with just one tab.
             </OpenNewTabsDescription>
+        </PageContent>
+        <PageContent
+            maxHeight={'fit-content'}
+            backgroundColor={ColorsEnum.WHITE}
+            height={'fit-content'}
+        >
+            <StartupsWrapper>
+                <Flex>
+                    <StartupsTitle
+                        color={ColorsEnum.BLACK}
+                    >
+                        Findtrend helps you to increase your productivity and reduce your computer's memory load,
+                        <StartupsTitle
+                            color={ColorsEnum.LIGHT_GREY}
+                        >
+                            {' '} ann aplication that can fulfill your daily browsing needs.
+                        </StartupsTitle>
+                    </StartupsTitle>
+                </Flex>
+                <StartupsTitle
+                    margin={'15vh 0 80px 0'}
+                    color={ColorsEnum.BLACK}
+                    align={'center'}
+                >
+                    Findtrend make +1000 Startup grow
+                </StartupsTitle>
+                <StartupsList />
+            </StartupsWrapper>
         </PageContent>
     </>
 }

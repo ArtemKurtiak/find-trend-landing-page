@@ -13,14 +13,14 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   background-image: url(${props => props.backgroundImage});
   background-color: ${props => props.backgroundColor};
   background-size: cover;
-  height: 100vh;
+  height: ${props => props.height || '100vh'};
   box-sizing: border-box;
-  max-height: ${props => props.maxHeight};
+  max-height: ${props => props.maxHeight || '100vh'};
   
   ${MediaQueriesEnum.MAX_MOBILE} {
     padding: 2.5vh 2vh;
     height: fit-content;
-    min-height: ${props => props.maxHeight ? props.maxHeight : '100vh'};
+    min-height: ${props => props.maxHeight || '100vh'};
   } 
   
   ${MediaQueriesEnum.TABLET} {

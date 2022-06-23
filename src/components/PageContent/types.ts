@@ -10,6 +10,7 @@ export type PageContentProps = {
     justifyContent?: string;
     flexDirection?: string;
     gap?: string;
+    height?: string;
 };
 
 export type PageContentWrapperProps = Omit<PageContentProps, 'children'>

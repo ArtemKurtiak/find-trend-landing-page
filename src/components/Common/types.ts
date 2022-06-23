@@ -5,4 +5,7 @@ export type FlexPropsType = {
     alignItems?: string;
     gap?: string;
     margin?: string;
+    wrap?: string;
+    width?: string;
+    mobileMargin?: boolean;
 }

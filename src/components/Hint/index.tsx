@@ -1,11 +1,12 @@
 import React from "react";
 
-import {HintItem, HintItemLabel} from "./styled";
-import {HintPropsType} from "./types";
-import {ColorsEnum} from "../../enums/colors.enum";
+import { HintItem, HintItemLabel } from "./styled";
+import { HintPropsType } from "./types";
+import { ColorsEnum } from "../../enums/colors.enum";
 
-import LeftWhiteHintArrow from '../../assets/images/svg/right_white_hint_arrow.svg';
+import LeftWhiteHintArrow from '../../assets/images/svg/left_white_hint_arrow.svg';
 import RightBlackHintArrow from '../../assets/images/svg/right_black_hint_arrow.svg';
+import leftBlackHintArrow from '../../assets/images/svg/right_white_hint_arrow.svg';
 import LeftBlackHintArrow from '../../assets/images/svg/left_black_hint_arrow.svg';
 
 const Hint: React.FC<HintPropsType> = ({ label, color, arrowPosition, forMobile = true }) => {
@@ -13,7 +14,7 @@ const Hint: React.FC<HintPropsType> = ({ label, color, arrowPosition, forMobile 
         alignItems={arrowPosition === 'left' ? 'flex-end' : 'flex-start'}
     >
         { arrowPosition === 'left' && <img
-            src={LeftBlackHintArrow}
+            src={color === ColorsEnum.BLACK ? LeftBlackHintArrow : LeftWhiteHintArrow}
             alt={'arrow'}
             width={35}
             height={41}
@@ -24,7 +25,7 @@ const Hint: React.FC<HintPropsType> = ({ label, color, arrowPosition, forMobile 
             {label}
         </HintItemLabel>
         { arrowPosition === 'right' && <img
-            src={color === ColorsEnum.BLACK ? RightBlackHintArrow : LeftWhiteHintArrow}
+            src={color === ColorsEnum.BLACK ? RightBlackHintArrow : leftBlackHintArrow}
             alt={'arrow'}
             width={35}
             height={41}

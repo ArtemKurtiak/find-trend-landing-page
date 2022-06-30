@@ -16,6 +16,7 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   height: ${props => props.height || '100vh'};
   box-sizing: border-box;
   max-height: ${props => props.maxHeight || '100vh'};
+  overflow: hidden;
   
   ${MediaQueriesEnum.MAX_MOBILE} {
     padding: 2.5vh 2vh;

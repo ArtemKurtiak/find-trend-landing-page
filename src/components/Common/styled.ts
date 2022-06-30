@@ -14,7 +14,7 @@ export const Flex = styled.div<FlexPropsType>`
   width: ${props => props.width};
   margin: ${props => props.margin};
   
-  ${MediaQueriesEnum.MAX_MOBILE} {
-    margin: ${props => props.mobileMargin ? props.margin : '0'};
+  ${MediaQueriesEnum.MAX_TABLET} {
+    margin: ${props => props.tabletMargin ? props.margin : '0'};
   }
 `

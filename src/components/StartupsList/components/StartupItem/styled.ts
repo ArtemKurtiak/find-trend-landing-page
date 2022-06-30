@@ -17,6 +17,11 @@ export const StartupItemWrapper = styled.div`
     transform: scale(1.1);
   }
   
+  ${MediaQueriesEnum.MAX_TABLET} {
+    width: 260px;
+    height: 90px;
+  }
+  
   ${MediaQueriesEnum.MAX_MOBILE} {
     width: 162px;
     height: 74px;
@@ -26,8 +31,11 @@ export const StartupItemWrapper = styled.div`
 export const StartupItemImage = styled.img`
   zoom: 1;
   
-  ${MediaQueriesEnum.MOBILE} {
+  ${MediaQueriesEnum.TABLET} {
     zoom: 1;
+  }
+  ${MediaQueriesEnum.MOBILE} {
+    zoom: 0.8;
   }
   ${MediaQueriesEnum.MAX_MOBILE} {
     zoom: 0.6;

@@ -5,5 +5,6 @@ export enum ColorsEnum {
     DARK_GREY = '#181818',
     GREEN = '#A8FF35',
     LIGHT_GREY = '#ADADAD',
-    START_UP_BACKGROUND = '#F5F5F5'
+    START_UP_BACKGROUND = '#F5F5F5',
+    PLATFORMS_BACKGROUND = '#FAFAFA'
 }

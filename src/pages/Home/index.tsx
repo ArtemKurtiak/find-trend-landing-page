@@ -1,11 +1,13 @@
 import PageContent from "../../components/PageContent";
 import Header from "../../components/Header";
 
-import FirstPageBackground from '../../assets/images/png/home_background.png';
-
 import Hint from "../../components/Hint";
 import Button from "../../components/Button";
-import {Flex} from "../../components/Common/styled";
+import TabItem from "../../components/TabItem";
+import StartupsList from "../../components/StartupsList";
+import PlatformsList from "../../components/PlatformsList";
+
+import { Flex } from "../../components/Common/styled";
 import {
     DribbleTab,
     FacebookTab,
@@ -15,22 +17,21 @@ import {
     OpenNewTabsDescription,
     OpenNewTabsTabWrapper,
     OpenNewTabsTitle,
-    PinterestTab,
+    PinterestTab, PlatformsTitle, PlatformsWrapper,
     StartupsTitle,
     StartupsWrapper,
     TabsWrapper,
     TwitterTab
 } from "./styled";
-import TabItem from "../../components/TabItem";
-import {ColorsEnum} from "../../enums/colors.enum";
-import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
+import { ColorsEnum } from "../../enums/colors.enum";
+import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
 
 import Twitter from '../../assets/images/svg/twitter.svg';
 import Pinterest from '../../assets/images/svg/pinterest.svg';
 import Facebook from '../../assets/images/svg/facebook.svg';
 import Dribble from '../../assets/images/svg/dribble.svg';
 import Logo from '../../assets/images/svg/logo.svg';
-import StartupsList from "../../components/StartupsList";
+import FirstPageBackground from '../../assets/images/png/home_background.png';
 
 const Home = () => {
     return <>
@@ -55,7 +56,7 @@ const Home = () => {
                     margin={'30px 0 0 0'}
                     gap={'18px'}
                     alignItems={'center'}
-                    mobileMargin
+                    tabletMargin
                 >
                     <Hint
                         color={ColorsEnum.WHITE}
@@ -168,6 +169,18 @@ const Home = () => {
                 </StartupsTitle>
                 <StartupsList />
             </StartupsWrapper>
+        </PageContent>
+        <PageContent
+            backgroundColor={ColorsEnum.PLATFORMS_BACKGROUND}
+            height={'fit-content'}
+            maxHeight={'fit-content'}
+            display={'flex'}
+            justifyContent={'center'}
+        >
+            <PlatformsWrapper>
+                <PlatformsTitle>All platform connect to Findtrend</PlatformsTitle>
+                <PlatformsList />
+            </PlatformsWrapper>
         </PageContent>
     </>
 }

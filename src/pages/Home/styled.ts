@@ -173,3 +173,28 @@ export const StartupsWrapper = styled.div`
     padding: 4vh 0 4vh 0;
   }
 `;
+
+export const PlatformsTitle = styled.div`
+  font-family: ${FontFamiliesEnum.EFFRA_HEAVY}, sans-serif;
+  font-size: 64px;
+  color: ${props => props.color};
+  max-width: 75vw;
+  text-align: center;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    font-size: 35px;
+  }
+`;
+
+export const PlatformsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 8vh;
+
+  ${MediaQueriesEnum.MAX_TABLET} {
+    padding: 4vh 0 4vh 0;
+  }
+`;

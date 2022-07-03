@@ -1,13 +1,14 @@
+import {Tweet} from 'react-twitter-widgets';
+
 import PageContent from "../../components/PageContent";
 import Header from "../../components/Header";
-
 import Hint from "../../components/Hint";
 import Button from "../../components/Button";
 import TabItem from "../../components/TabItem";
 import StartupsList from "../../components/StartupsList";
 import PlatformsList from "../../components/PlatformsList";
 
-import { Flex } from "../../components/Common/styled";
+import {Flex} from "../../components/Common/styled";
 import {
     DribbleTab,
     FacebookTab,
@@ -17,14 +18,17 @@ import {
     OpenNewTabsDescription,
     OpenNewTabsTabWrapper,
     OpenNewTabsTitle,
-    PinterestTab, PlatformsTitle, PlatformsWrapper,
+    PinterestTab,
+    PlatformsTitle,
+    PlatformsWrapper,
     StartupsTitle,
     StartupsWrapper,
     TabsWrapper,
+    TweetsWrapper,
     TwitterTab
 } from "./styled";
-import { ColorsEnum } from "../../enums/colors.enum";
-import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
+import {ColorsEnum} from "../../enums/colors.enum";
+import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
 
 import Twitter from '../../assets/images/svg/twitter.svg';
 import Pinterest from '../../assets/images/svg/pinterest.svg';
@@ -56,7 +60,7 @@ const Home = () => {
                     margin={'30px 0 0 0'}
                     gap={'18px'}
                     alignItems={'center'}
-                    tabletMargin
+                    smallDesktopMargin
                 >
                     <Hint
                         color={ColorsEnum.WHITE}
@@ -180,6 +184,20 @@ const Home = () => {
             <PlatformsWrapper>
                 <PlatformsTitle>All platform connect to Findtrend</PlatformsTitle>
                 <PlatformsList />
+                <TweetsWrapper>
+                    <Tweet
+                        tweetId={'1532715028742385668'}
+                    />
+                    <Tweet
+                        tweetId={'1542645823435153408'}
+                    />
+                </TweetsWrapper>
+                <Button
+                    bgColor={ColorsEnum.BLACK}
+                    color={ColorsEnum.WHITE}
+                    label={'View more trend'}
+                    fontFamily={FontFamiliesEnum.EFFRA_BOLD}
+                />
             </PlatformsWrapper>
         </PageContent>
     </>

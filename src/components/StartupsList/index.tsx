@@ -43,7 +43,7 @@ const StartupsList = () => {
         gap={'32px'}
         wrap={'wrap'}
         margin={'0px 145px'}
-        tabletMargin={false}
+        smallDesktopMargin={false}
     >
         {startUpsArray.map((item) => {
             return <StartupItem key={item} image={item} />

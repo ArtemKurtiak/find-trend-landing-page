@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 import { FlexPropsType } from "./types";
-import { MediaQueriesEnum } from "../../enums/mediaQueries.enum";
 
 export const Flex = styled.div<FlexPropsType>`
   display: flex;
@@ -14,7 +13,7 @@ export const Flex = styled.div<FlexPropsType>`
   width: ${props => props.width};
   margin: ${props => props.margin};
   
-  ${MediaQueriesEnum.MAX_TABLET} {
-    margin: ${props => props.tabletMargin ? props.margin : '0'};
+  @media (max-width: 1212px) {
+    margin: ${props => props.smallDesktopMargin ? props.margin : '0'};
   }
 `

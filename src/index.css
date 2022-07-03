@@ -6,6 +6,16 @@ html {
     scrollbar-width: none;
 }
 
+iframe {
+    width: 700px !important;
+}
+
+@media only screen and (max-width: 768px) {
+    iframe {
+        width: 80vw !important;
+    }
+}
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -28,4 +38,9 @@ html::-webkit-scrollbar {
 @font-face {
     font-family: 'GoodDog-New';
     src: local('GoodDog-New'), url('./assets/fonts/GoodDog-New.ttf');
+}
+
+@font-face {
+    font-family: 'Effra-Bold';
+    src: local('Effra-Bold'), url('./assets/fonts/Effra-Bold.ttf');
 }

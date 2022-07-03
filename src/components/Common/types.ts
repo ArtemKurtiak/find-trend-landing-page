@@ -7,5 +7,5 @@ export type FlexPropsType = {
     margin?: string;
     wrap?: string;
     width?: string;
-    tabletMargin?: boolean;
+    smallDesktopMargin?: boolean;
 }

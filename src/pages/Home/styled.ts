@@ -192,9 +192,21 @@ export const PlatformsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10vh 8vh;
+  margin-bottom: 50px;
 
-  ${MediaQueriesEnum.MAX_TABLET} {
+  ${MediaQueriesEnum.SMALL_DESKTOP} {
+    padding: 10vh 8vh;
+  }
+  ${MediaQueriesEnum.MOBILE} {
     padding: 4vh 0 4vh 0;
   }
+`;
+
+export const TweetsWrapper = styled.div`
+  margin: 77px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 43px;
 `;

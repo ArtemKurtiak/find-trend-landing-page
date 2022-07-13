@@ -1,4 +1,5 @@
-import {Tweet} from 'react-twitter-widgets';
+import { useState } from "react";
+import { Tweet } from 'react-twitter-widgets';
 
 import PageContent from "../../components/PageContent";
 import Header from "../../components/Header";
@@ -7,8 +8,9 @@ import Button from "../../components/Button";
 import TabItem from "../../components/TabItem";
 import StartupsList from "../../components/StartupsList";
 import PlatformsList from "../../components/PlatformsList";
+import Toggle from "../../components/Toggle";
 
-import {Flex} from "../../components/Common/styled";
+import { Flex } from "../../components/Common/styled";
 import {
     DribbleTab,
     FacebookTab,
@@ -21,14 +23,21 @@ import {
     PinterestTab,
     PlatformsTitle,
     PlatformsWrapper,
+    PricingPeriodItem,
+    PricingPlansPeriodsWrapper,
+    PricingTitle,
+    PricingWrapper,
     StartupsTitle,
     StartupsWrapper,
+    SubscriptionPlansWrapper,
     TabsWrapper,
     TweetsWrapper,
-    TwitterTab
+    TwitterTab,
+    YearlyPlanSavingHint
 } from "./styled";
-import {ColorsEnum} from "../../enums/colors.enum";
-import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
+import { ColorsEnum } from "../../enums/colors.enum";
+import { ISubscriptionPlan, PlanTypesEnum } from "./types";
+import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
 
 import Twitter from '../../assets/images/svg/twitter.svg';
 import Pinterest from '../../assets/images/svg/pinterest.svg';
@@ -36,8 +45,64 @@ import Facebook from '../../assets/images/svg/facebook.svg';
 import Dribble from '../../assets/images/svg/dribble.svg';
 import Logo from '../../assets/images/svg/logo.svg';
 import FirstPageBackground from '../../assets/images/png/home_background.png';
+import SubscriptionPlan from "../../components/SubscriptionPlan";
+
+const subscriptionPlans: ISubscriptionPlan[] = [
+    {
+        title: 'Personal',
+        monthPrice: 8,
+        yearPrice: 88,
+        backgroundColor: ColorsEnum.WHITE,
+        buttonColor: ColorsEnum.GREEN,
+        preferences: [
+            'Up to 5 page each group',
+            'Up to 10 group page',
+            '5 Days group page saved'
+        ],
+        description: 'Special first packet for all',
+        buttonTextColor: ColorsEnum.BLACK
+    },
+    {
+        title: 'Regular',
+        monthPrice: 20,
+        yearPrice: 220,
+        backgroundColor: ColorsEnum.GREEN,
+        buttonColor: ColorsEnum.BLACK,
+        preferences: [
+            'Up to 15 page each group',
+            'Download page up to 20 page',
+            'Up to 10 group page',
+            '15 Days group page saved'
+        ],
+        description: 'Recommended for personal pro',
+        buttonTextColor: ColorsEnum.WHITE
+    },
+    {
+        title: 'Premium',
+        monthPrice: 48,
+        yearPrice: 550,
+        backgroundColor: ColorsEnum.WHITE,
+        buttonColor: ColorsEnum.GREEN,
+        preferences: [
+            'Unlimited group pages',
+            'Unlimited download page',
+            'Unlimited page each group',
+            'Customize sorting group pages',
+            'Customize group page name',
+            '30 Days group page saved'
+        ],
+        description: 'Packet for Startup & Company',
+        buttonTextColor: ColorsEnum.BLACK
+    }
+];
 
 const Home = () => {
+    const [selectedPlanPeriod, setSelectedPlanPeriod] = useState<PlanTypesEnum>(PlanTypesEnum.MONTH);
+
+    const handlePlanTypeChange = () => {
+        setSelectedPlanPeriod(selectedPlanPeriod === PlanTypesEnum.YEAR ? PlanTypesEnum.MONTH : PlanTypesEnum.YEAR);
+    }
+
     return <>
         <PageContent
             backgroundImage={FirstPageBackground}
@@ -129,6 +194,7 @@ const Home = () => {
                     color={ColorsEnum.BLACK}
                     arrowPosition={'left'}
                     label={'Solution for discover a trend'}
+                    forMobile={false}
                 />
                 <OpenNewTabsTabWrapper>
                     <TabItem
@@ -137,6 +203,7 @@ const Home = () => {
                     />
                 </OpenNewTabsTabWrapper>
                 <Hint
+                    forMobile={false}
                     color={ColorsEnum.BLACK}
                     arrowPosition={'right'}
                     label={'You just need one tab now'}
@@ -199,6 +266,56 @@ const Home = () => {
                     fontFamily={FontFamiliesEnum.EFFRA_BOLD}
                 />
             </PlatformsWrapper>
+        </PageContent>
+        <PageContent
+            backgroundColor={ColorsEnum.BLACK}
+            height={'fit-content'}
+            display={'flex'}
+            justifyContent={'center'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            maxHeight={'fit-content'}
+        >
+            <PricingWrapper>
+                <PricingTitle>
+                    Get your best deal
+                </PricingTitle>
+                <PricingPlansPeriodsWrapper>
+                    <PricingPeriodItem
+                        isActive={selectedPlanPeriod === PlanTypesEnum.MONTH}
+                        margin={'0 24px 0 0'}
+                    >Month</PricingPeriodItem>
+                    <Toggle
+                        onChange={handlePlanTypeChange}
+                        isActive={selectedPlanPeriod === PlanTypesEnum.YEAR}
+                        activeBackgroundColor={ColorsEnum.WHITE}
+                        inactiveBackgroundColor={ColorsEnum.WHITE}
+                        activeIndicatorColor={ColorsEnum.GREEN}
+                        inactiveIndicatorColor={ColorsEnum.GREEN}
+                    />
+                    <PricingPeriodItem
+                        isActive={selectedPlanPeriod === PlanTypesEnum.YEAR}
+                        margin={'0 15px 0 24px'}
+                    >Year</PricingPeriodItem>
+                    <YearlyPlanSavingHint>
+                        <Hint
+                            forMobile
+                            color={ColorsEnum.WHITE}
+                            arrowPosition={'right'}
+                            label={'Save 10% per month'}
+                        />
+                    </YearlyPlanSavingHint>
+                </PricingPlansPeriodsWrapper>
+                <SubscriptionPlansWrapper>
+                    {subscriptionPlans.map((planItem) => {
+                        return <SubscriptionPlan
+                            key={planItem.monthPrice}
+                            selectedPeriod={selectedPlanPeriod}
+                            {...planItem}
+                        />
+                    })}
+                </SubscriptionPlansWrapper>
+            </PricingWrapper>
         </PageContent>
     </>
 }

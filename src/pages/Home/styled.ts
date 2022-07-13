@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
 import {ColorsEnum} from "../../enums/colors.enum";
 import {MediaQueriesEnum} from "../../enums/mediaQueries.enum";
-import {StartupsTitleProps} from "./types";
+import {IPricingPeriodItemProps, StartupsTitleProps} from "./types";
 
 export const HomePageFirstMainPart = styled.div`
   display: flex;
@@ -210,3 +210,76 @@ export const TweetsWrapper = styled.div`
   align-items: center;
   gap: 43px;
 `;
+
+export const PricingWrapper = styled.div`
+  padding: 7vh 0 7vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+
+export const PricingTitle = styled.div`
+  color: ${ColorsEnum.WHITE};
+  text-align: center;
+  font-family: ${FontFamiliesEnum.EFFRA_BOLD}, sans-serif;
+  font-size: 64px;
+  margin-bottom: 20px;
+
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    font-size: 35px;
+  }
+`;
+
+export const PricingPlansPeriodsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const PricingPeriodItem = styled.div<IPricingPeriodItemProps>`
+  font-family: ${FontFamiliesEnum.INTER_MEDIUM};
+  color: ${(props) => props.isActive ? ColorsEnum.WHITE : ColorsEnum.NOT_ACTIVE_SUBSCRIPTION_PERIOD};
+  margin: ${(props) => props.margin};
+  transition: all 0.3s;
+`;
+
+export const SubscriptionPlansWrapper = styled.div`
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    margin-top: 80px;
+  }
+`;
+
+export const YearlyPlanSavingHint = styled.div`
+  & > div {
+    position: absolute;
+  }
+  margin-bottom: 60px;
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    & > div > img {
+      position: absolute;
+      transform: rotate(55deg);
+      right: 55px;
+      margin-top: 50px;
+    }
+    & > div > div {
+      position: absolute;
+      right: 20px;
+      max-width: 70px;
+      width: 70px;
+      margin-top: 90px;
+    }
+  }
+`;
+
+// position: absolute;
+// right: 50px;
+// margin-top: 30px;
+// transform: rotate(30deg);

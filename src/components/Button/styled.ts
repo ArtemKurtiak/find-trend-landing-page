@@ -5,6 +5,7 @@ import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
 
 export const StyledButton = styled.div<Omit<ButtonPropTypes, 'label'>>`
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: ${props => props.margin};
   font-family: ${props => props.fontFamily || FontFamiliesEnum.EFFRA_REGULAR};

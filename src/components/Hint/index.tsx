@@ -11,6 +11,7 @@ import LeftBlackHintArrow from '../../assets/images/svg/left_black_hint_arrow.sv
 
 const Hint: React.FC<HintPropsType> = ({ label, color, arrowPosition, forMobile = true }) => {
     return <HintItem
+        forMobile={forMobile}
         alignItems={arrowPosition === 'left' ? 'flex-end' : 'flex-start'}
     >
         { arrowPosition === 'left' && <img

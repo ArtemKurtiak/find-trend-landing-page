@@ -5,5 +5,6 @@ export enum FontFamiliesEnum {
     EFFRA_REGULAR = 'Effra-Regular',
     EFFRA_HEAVY = 'Effra-Heavy',
     GOOD_DOG_NEW = 'GoodDog-New',
-    ROBOTO = 'ROBOTO'
+    ROBOTO = 'ROBOTO',
+    INTER_MEDIUM = 'Inter-Medium'
 }

@@ -26,6 +26,11 @@ html::-webkit-scrollbar {
 }
 
 @font-face {
+    font-family: 'Inter-Medium';
+    src: local('Inter-Bold'), url('./assets/fonts/Inter-Medium.ttf');
+}
+
+@font-face {
     font-family: 'Effra-Regular';
     src: local('Effra-Regular'), url('./assets/fonts/Effra-Regular.ttf');
 }

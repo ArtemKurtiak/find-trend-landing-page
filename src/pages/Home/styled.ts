@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
 import {ColorsEnum} from "../../enums/colors.enum";
 import {MediaQueriesEnum} from "../../enums/mediaQueries.enum";
-import {IPricingPeriodItemProps, StartupsTitleProps} from "./types";
+import {IJoinUsTitleProps, IPricingPeriodItemProps, StartupsTitleProps} from "./types";
 
 export const HomePageFirstMainPart = styled.div`
   display: flex;
@@ -247,7 +247,7 @@ export const PricingPeriodItem = styled.div<IPricingPeriodItemProps>`
 export const SubscriptionPlansWrapper = styled.div`
   margin-top: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
   
@@ -279,7 +279,24 @@ export const YearlyPlanSavingHint = styled.div`
   }
 `;
 
-// position: absolute;
-// right: 50px;
-// margin-top: 30px;
-// transform: rotate(30deg);
+export const JoinUsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0 10vh 0;
+`;
+
+export const JoinUsTitle = styled.div<IJoinUsTitleProps>`
+  font-size: 72px;
+  text-align: center;
+  line-height: 112%;
+  color: ${(props) => props.color};
+  font-family: ${FontFamiliesEnum.EFFRA_HEAVY}, sans-serif;
+  
+  ${MediaQueriesEnum.MAX_TABLET} {
+    font-size: 63px;
+  }
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    font-size: 36px;
+  }
+`;

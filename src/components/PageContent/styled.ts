@@ -25,6 +25,6 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   } 
   
   ${MediaQueriesEnum.TABLET} {
-    padding: 3.9vh 11vh;
+    padding: 50px;
   }
 `;

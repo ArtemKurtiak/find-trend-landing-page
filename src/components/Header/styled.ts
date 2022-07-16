@@ -29,27 +29,25 @@ export const HeaderTitle = styled.div`
   font-family: ${FontFamiliesEnum.INTER_BOLD}, sans-serif;
   font-size: clamp(1em, 1.3em, 2em);
   color: ${ColorsEnum.WHITE};
-  
-  ${MediaQueriesEnum.MAX_MOBILE} {
-    display: none;
-  }
-  
+
   ${MediaQueriesEnum.TABLET} {
     display: block;
+  }
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    display: none;
   }
 `
 
 export const HeaderLinks = styled.div`
   display: flex;
   align-items: center;
-  gap: clamp(0.5em, 1.6em, 2.5em);
+  gap: 40px;
 
-  ${MediaQueriesEnum.MOBILE} {
-    display: none;
+  ${MediaQueriesEnum.MAX_TABLET} {
+    gap: 25px;
   }
-
-  ${MediaQueriesEnum.SMALL_SCREEN} {
-    display: flex;
+  ${MediaQueriesEnum.MAX_MOBILE} {
+    display: none;
   }
 `
 
@@ -64,13 +62,12 @@ export const HeaderAuthActions = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
-
-  ${MediaQueriesEnum.MOBILE} {
-    display: none;
-  }
-
+  
   ${MediaQueriesEnum.SMALL_SCREEN} {
     display: flex;
+  }
+  ${MediaQueriesEnum.MOBILE} {
+    display: none;
   }
 `
 
@@ -82,14 +79,10 @@ export const HeaderLogin = styled.div`
 `
 
 export const HeaderBurgerMenu = styled.img`
+  display: none;
   cursor: pointer;
-  display: block;
-
-  ${MediaQueriesEnum.MOBILE} {
+  
+  ${MediaQueriesEnum.MAX_MOBILE} {
     display: block;
-  }
-
-  ${MediaQueriesEnum.SMALL_SCREEN} {
-    display: none;
   }
 `

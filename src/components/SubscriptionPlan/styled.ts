@@ -49,7 +49,7 @@ export const SubscriptionPlanDescription = styled.div`
 
 export const SubscriptionPlanDivider = styled.div`
   width: 100%;
-  background-color: ${ColorsEnum.SUBSCRIPTION_PLAN_DIVIDER};
+  background-color: ${ColorsEnum.BLACK_OPACITY_0_2};
   height: 1px;
   margin-top: 32px;
   

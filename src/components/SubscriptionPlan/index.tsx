@@ -11,14 +11,14 @@ import {
     SubscriptionPlanTitle,
     SubscriptionPlanWrapper
 } from './styled';
-import {ISubscriptionPlanWrapper} from "./types";
-import {Flex} from '../Common/styled';
-import {FontFamiliesEnum} from "../../enums/fontFamilies.enum";
+import { ISubscriptionPlanWrapper } from "./types";
+import { Flex } from '../Common/styled';
+import { FontFamiliesEnum } from "../../enums/fontFamilies.enum";
+import { PlanTypesEnum } from "../../pages/Home/types";
 
 import Button from "../Button";
 
 import Tick from '../../assets/images/svg/tick.svg';
-import {PlanTypesEnum} from "../../pages/Home/types";
 
 const SubscriptionPlan: React.FC<ISubscriptionPlanWrapper> = ({
     monthPrice,

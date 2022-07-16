@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Tweet } from 'react-twitter-widgets';
+import {useState} from "react";
+import {Tweet} from 'react-twitter-widgets';
 
 import PageContent from "../../components/PageContent";
 import Header from "../../components/Header";
@@ -9,6 +9,8 @@ import TabItem from "../../components/TabItem";
 import StartupsList from "../../components/StartupsList";
 import PlatformsList from "../../components/PlatformsList";
 import Toggle from "../../components/Toggle";
+import SubscriptionPlan from "../../components/SubscriptionPlan";
+import Footer from "../../components/Footer";
 
 import { Flex } from "../../components/Common/styled";
 import {
@@ -17,6 +19,8 @@ import {
     HomePageFirstMainPart,
     HomePageSubTitle,
     HomePageTitle,
+    JoinUsTitle,
+    JoinUsWrapper,
     OpenNewTabsDescription,
     OpenNewTabsTabWrapper,
     OpenNewTabsTitle,
@@ -45,7 +49,6 @@ import Facebook from '../../assets/images/svg/facebook.svg';
 import Dribble from '../../assets/images/svg/dribble.svg';
 import Logo from '../../assets/images/svg/logo.svg';
 import FirstPageBackground from '../../assets/images/png/home_background.png';
-import SubscriptionPlan from "../../components/SubscriptionPlan";
 
 const subscriptionPlans: ISubscriptionPlan[] = [
     {
@@ -317,6 +320,34 @@ const Home = () => {
                 </SubscriptionPlansWrapper>
             </PricingWrapper>
         </PageContent>
+        <PageContent
+            backgroundColor={ColorsEnum.GREEN}
+            height={'fit-content'}
+            display={'flex'}
+            justifyContent={'center'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            maxHeight={'fit-content'}
+        >
+            <JoinUsWrapper>
+                <JoinUsTitle color={ColorsEnum.BLACK} >
+                    Join us on email for
+                </JoinUsTitle>
+                <JoinUsTitle color={ColorsEnum.BLACK_OPACITY_0_2} >
+                    more trending topics
+                </JoinUsTitle>
+                <Button
+                    color={ColorsEnum.WHITE}
+                    label={'Join now'}
+                    bgColor={ColorsEnum.BLACK}
+                    margin={'40px 0 0 0'}
+                    fontFamily={FontFamiliesEnum.EFFRA_BOLD}
+                    width={'180px'}
+                    padding={'16px 52px'}
+                />
+            </JoinUsWrapper>
+        </PageContent>
+        <Footer />
     </>
 }
 

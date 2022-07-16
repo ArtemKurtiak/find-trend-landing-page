@@ -7,4 +7,6 @@ export type ButtonPropTypes = {
     label: string;
     fontFamily?: FontFamiliesEnum;
     margin?: string;
+    width?: string;
+    padding?: string;
 }

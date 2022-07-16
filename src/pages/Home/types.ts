@@ -22,6 +22,10 @@ export interface ISubscriptionPlan {
     buttonTextColor: ColorsEnum;
 }
 
+export interface IJoinUsTitleProps {
+    color: ColorsEnum;
+}
+
 export interface IPricingPeriodItemProps {
     margin?: string;
     isActive: boolean;

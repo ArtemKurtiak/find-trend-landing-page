@@ -7,6 +7,7 @@ export enum ColorsEnum {
     LIGHT_GREY = '#ADADAD',
     START_UP_BACKGROUND = '#F5F5F5',
     PLATFORMS_BACKGROUND = '#FAFAFA',
-    SUBSCRIPTION_PLAN_DIVIDER = 'rgba(0, 0, 0, 0.2)',
-    NOT_ACTIVE_SUBSCRIPTION_PERIOD = 'rgba(255, 255, 255, 0.5)'
+    BLACK_OPACITY_0_2 = 'rgba(0, 0, 0, 0.2)',
+    NOT_ACTIVE_SUBSCRIPTION_PERIOD = 'rgba(255, 255, 255, 0.5)',
+
 }

@@ -9,7 +9,7 @@ export const StyledButton = styled.div<Omit<ButtonPropTypes, 'label'>>`
   align-items: center;
   margin: ${props => props.margin};
   font-family: ${props => props.fontFamily || FontFamiliesEnum.EFFRA_REGULAR};
-  font-size: clamp(0.6em, 0.9em, 1.3em);
+  font-size: 18px;
   border-radius: 40px;
   color: ${props => props.color};
   background-color: ${props => props.bgColor};

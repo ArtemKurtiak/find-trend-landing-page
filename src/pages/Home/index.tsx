@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {Tweet} from 'react-twitter-widgets';
+import { useState } from "react";
+import { Tweet } from 'react-twitter-widgets';
 
 import PageContent from "../../components/PageContent";
 import Header from "../../components/Header";

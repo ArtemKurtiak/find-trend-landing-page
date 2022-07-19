@@ -1,3 +1,8 @@
+import { useState } from "react";
+
+import HeaderPopUp from "../HeaderPopUp";
+import Button from "../Button";
+
 import {
     HeaderAuthActions, HeaderBurgerMenu,
     HeaderLinkItem,
@@ -7,14 +12,23 @@ import {
     HeaderTitle,
     HeaderWrapper
 } from "./styled";
-import Button from "../Button";
 import { ColorsEnum } from "../../enums/colors.enum";
 
 import Logo from '../../assets/images/svg/logo.svg';
 import BurgerMenu from '../../assets/images/svg/burger_menu.svg';
 
 const Header = () => {
+    const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+
+    const handleBurgerMenuClick = () => {
+        setIsPopUpVisible(!isPopUpVisible);
+    }
+
     return <HeaderWrapper>
+        <HeaderPopUp
+            isVisible={isPopUpVisible}
+            handleClick={handleBurgerMenuClick}
+        />
         <HeaderLogoWrapper>
             <HeaderLogo
                 src={Logo}
@@ -54,6 +68,7 @@ const Header = () => {
         <HeaderBurgerMenu
             src={BurgerMenu}
             alt={'menu'}
+            onClick={handleBurgerMenuClick}
         />
     </HeaderWrapper>
 }

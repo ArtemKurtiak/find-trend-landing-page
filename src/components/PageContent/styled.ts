@@ -9,7 +9,6 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   align-items: ${props => props.alignItems};
   flex-direction: ${props => props.flexDirection};
   gap: ${props => props.gap};
-  padding: 3.9vh 11vh;
   background-image: url(${props => props.backgroundImage});
   background-color: ${props => props.backgroundColor};
   background-size: cover;
@@ -17,14 +16,14 @@ export const PageContentWrapper = styled.div<PageContentWrapperProps>`
   box-sizing: border-box;
   max-height: ${props => props.maxHeight || '100vh'};
   overflow: hidden;
-  
+  padding: 3.9vh 11vh;
+
   ${MediaQueriesEnum.MAX_MOBILE} {
     padding: 2.5vh 2vh;
     height: fit-content;
     min-height: ${props => props.maxHeight || '100vh'};
-  } 
-  
-  ${MediaQueriesEnum.TABLET} {
+  }
+  ${MediaQueriesEnum.MAX_TABLET} {
     padding: 50px;
   }
 `;

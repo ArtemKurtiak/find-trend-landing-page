@@ -46,14 +46,14 @@ export const HeaderLinks = styled.div`
   ${MediaQueriesEnum.MAX_TABLET} {
     gap: 25px;
   }
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  @media(max-width: 750px) {
     display: none;
   }
 `
 
 export const HeaderLinkItem = styled.div`
   color: ${ColorsEnum.WHITE};
-  font-size: clamp(0.6em, 0.9em, 1.3em);
+  font-size: 18px;
   font-family: ${FontFamiliesEnum.EFFRA_REGULAR}, sans-serif;
   cursor: pointer;
 `
@@ -72,7 +72,7 @@ export const HeaderAuthActions = styled.div`
 `
 
 export const HeaderLogin = styled.div`
-  font-size: clamp(0.6em, 0.9em, 1.3em);
+  font-size: 18px;
   color: ${ColorsEnum.WHITE};
   font-family: ${FontFamiliesEnum.EFFRA_REGULAR};
   cursor: pointer;
@@ -82,7 +82,7 @@ export const HeaderBurgerMenu = styled.img`
   display: none;
   cursor: pointer;
   
-  ${MediaQueriesEnum.MAX_MOBILE} {
+  @media(max-width: 750px) {
     display: block;
   }
 `
